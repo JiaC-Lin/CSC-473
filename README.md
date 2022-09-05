@@ -3,4 +3,5 @@
 <br>
 <h4> Link to Setting Up GitHub Pages: </h4>
 <a href="https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site"> GitHub Pages Doc </a> 
+<br>
 <a href="https://jiac-lin.github.io/Web-Design/Assignment_1/"> Assignment 1 </a>
