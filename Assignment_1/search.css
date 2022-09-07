@@ -1,15 +1,19 @@
-.center {
+*{ /*apply to everything*/
+    margin: 0;
+    padding: 0;
+}
+body {
+    background: #202124;
+    height: 100%;
+}
+.container {
     text-align:center;
     position: relative;
+    justify-content: center;
+    padding: 15px;
 }
 p.google {
     font-size: 110px;
     font-family: sans-serif;
     margin: auto; 
-}
-body {
-    background: #202124;
-    height: 100%;
-    margin: 0;
-    padding: 0;
 }
