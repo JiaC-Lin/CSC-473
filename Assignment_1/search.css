@@ -1,0 +1,15 @@
+.center {
+    text-align:center;
+    position: relative;
+}
+p.google {
+    font-size: 110px;
+    font-family: sans-serif;
+    margin: auto; 
+}
+body {
+    background: #202124;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
