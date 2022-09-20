@@ -2,9 +2,26 @@
     margin: 0;
     padding: 0;
 }
+
 body {
     background: #202124;
     height: 100%;
+}
+
+/*  Class   */
+.navbar {
+    text-align: right;
+    list-style: none;
+    padding: 10px 0px 10px 0px
+}
+.navbar a {
+    color: white;
+    margin: 10px;
+    text-decoration: none;
+    font-family: sans-serif;
+}
+.navbar a:hover {
+    text-decoration: underline;
 }
 .container {
     text-align:center;
@@ -12,8 +29,13 @@ body {
     justify-content: center;
     padding: 15px;
 }
-p.google {
-    font-size: 110px;
+.words {
     font-family: sans-serif;
-    margin: auto; 
+    margin: auto;
+    color: white
+}
+/*  ID  */
+#logo {
+    width: 600px;
+    height: 203px;
 }
