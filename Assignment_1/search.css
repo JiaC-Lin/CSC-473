@@ -8,11 +8,11 @@ body {
     height: 100%;
 }
 
-/*  Class   */
-.navbar {
+/*                  Class                   */
+.navbar {/*  NavBar  */
     text-align: right;
     list-style: none;
-    padding: 10px 0px 10px 0px
+    padding: 30px 0px 0px
 }
 .navbar a {
     color: white;
@@ -23,7 +23,8 @@ body {
 .navbar a:hover {
     text-decoration: underline;
 }
-.container {
+
+.container {/*  Body    */
     text-align:center;
     position: relative;
     justify-content: center;
@@ -34,8 +35,16 @@ body {
     margin: auto;
     color: white
 }
-/*  ID  */
+.wordsAS {
+    padding: 15px;
+    font-family: sans-serif;
+    margin: auto;
+    color: red;
+}
+
+/*                      ID                          */
 #logo {
     width: 600px;
     height: 203px;
+    padding-top: 150px;
 }
