@@ -1,9 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <title>Images</title>
+        <link rel="stylesheet" href="search.css">
     </head>
     <body>
-        
+        <a href="index.html">Google Search></a>
+        <a href="advanced.html">Google Advanced Search</a>
+        <div class="container">
+            <p>Google</p>
+        </div>
+        <div class="container">
+            <form action="https://www.google.com/search"> 
+                <!--Sending data to action attribute-->
+                <input type="text" name="q"> <!--input field for q parameter-->
+                <input hidden="true" name="tbm" value="isch">
+                <input type="submit" value="Google Search"> <!--submit button-->
+            </form>
+        </div>
     </body>
 </html>
