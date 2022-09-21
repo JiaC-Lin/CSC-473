@@ -41,6 +41,24 @@ body {
     margin: auto;
     color: red;
 }
+.searchbar {
+    border-color: white;
+    border-width: 1px;
+    border-radius: 20px;
+    width: 500px;
+    padding: 10px;
+    display: block;
+}
+.searchbutton {
+    color: snow;
+    border-color: white;
+    background-color: gray;
+    border-width: 1px;
+    border-radius: 5px;
+    width: 130px;
+    margin: 20px 10px;
+    padding: 10px;
+}
 
 /*                      ID                          */
 #logo {
