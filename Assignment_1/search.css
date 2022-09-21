@@ -35,11 +35,19 @@ body {
     margin: auto;
     color: white
 }
+.google {
+    float: left;
+    color: white;
+    font-size: large;
+    font-family: sans-serif;
+    margin: 0px 15px;
+}
 .wordsAS {
-    padding: 15px;
+    padding: 30px 50px;
     font-family: sans-serif;
     margin: auto;
-    color: red;
+    color: lightcoral;
+    font-size: 25px;
 }
 .searchbar {
     border-color: white;
@@ -58,6 +66,20 @@ body {
     width: 130px;
     margin: 20px 10px;
     padding: 10px;
+}
+.table {
+    margin: 45px;
+    color: white;
+}
+.table .searchbar {
+    border-radius: 5px;
+    margin: 5px;
+    background-color: #202124;
+    color: white;
+}
+.table .searchbutton {
+    float: right;
+    background-color: cadetblue;
 }
 
 /*                      ID                          */
