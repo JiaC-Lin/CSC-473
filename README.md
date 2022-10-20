@@ -8,5 +8,5 @@ Link to Setting Up GitHub Pages: <a href="https://docs.github.com/en/pages/getti
 <h4>Assignment 1: A front-end for Google Search, Google Image Search, and Google Advanced Search.</h4>
 Link to Frist Assignment: <a href="https://jiac-lin.github.io/Web-Design/Assignment_1/"> Assignment 1 </a>
 <hr>
-<h4>Assignment 2: Build a calculator with HTML,CSS,Bootstrap, CSS Grid or Flexbox and Javascript to add functionality and logic to the buttons.
+<h4>Assignment 2: Build a calculator with HTML,CSS,Bootstrap, CSS Grid or Flexbox and Javascript to add functionality and logic to the buttons.<h4>
 Link to Second Assignment: <a href="https://jiac-lin.github.io/Web-Design/Assignment_2/"> Assignment 2 </a>
