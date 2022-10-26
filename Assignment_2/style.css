@@ -5,7 +5,7 @@
     font-size: large;
 }
 body {
-    background-image: linear-gradient(140deg, #EADEDB 0%, #BC70A4 50%, #BFD641 75%);
+    background-image: linear-gradient(140deg, #EADEDB 0%, #70a4bc 50%, #cfe749 100%);
 }
 .calculator-grid {
     min-height: 100vh;
