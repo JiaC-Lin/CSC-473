@@ -1,13 +1,14 @@
-*, *::before, *::after {
+* {
     box-sizing: border-box;
-    font-family: 'segoe UI';
+    font-family: 'Segoe UI';
     font-weight: bold;
     font-size: large;
 }
-body {
+body{
     background-image: linear-gradient(140deg, #EADEDB 0%, #70a4bc 50%, #cfe749 100%);
 }
-.calculator-grid {
+
+.calculator-grid{
     min-height: 100vh;
     display: grid;
     justify-content: center;
@@ -17,30 +18,8 @@ body {
     gap: 10px;
 }
 
-/*buttons*/
-button {
-    border-radius: 10px;
-    background-color: gray;
-    cursor: pointer;
-}
-button:hover {
-    background-color: rgba(50, 50, 50, .75);
-}
-.number {
-    background-color: white;
-}
-.number:hover {
-    background-color: rgba(50, 50, 50, .2);
-}
-.equals {
-    background-color: #1778f2;
-}
-.equals:hover {
-    background-color: #1260c1;
-}
-
-/*output bar*/
-.output {
+/*Output*/
+.calculator{
     grid-column: 1 / -1;
     background-color: white;
     display: flex;
@@ -53,11 +32,31 @@ button:hover {
     border: solid rgb(172, 169, 169);
     border-radius: 10px;
 }
-.output .previous-operand {
-    color: #202124;
+.calculator .previous-operand{
     font-size: 2rem;
+    overflow: hidden;
+    text-align: end;
 }
-.output .current-operand {
-    color: #202124;
+.calculator .current-operand{ 
     font-size: 3rem;
+    overflow: hidden;
+    text-align: end;
+}
+
+/*Button*/
+button{
+    border-radius: 10px;
+    background-color: gray;
+    cursor: pointer;
+}
+button:hover {
+    background-color: rgba(50, 50, 50, .75);
+}
+.number{
+   background-color:white;
+}
+.off{
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: black;
 }

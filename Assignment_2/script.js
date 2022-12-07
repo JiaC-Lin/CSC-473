@@ -1,169 +1,68 @@
-const numberButtons = document.querySelectorAll('[data-number]')
-const operationButtons = document.querySelectorAll('[data-operation]')
-const equalsButton = document.querySelector('[data-equals]')
-const allClearButton = document.querySelector('[data-all-clear]')
-const previousOperandTextElement = document.querySelector('[data-previous-operand]')
-const currentOperandTextElement = document.querySelector('[data-current-operand]')
-const deleteButton = document.querySelector('[data-delete]')
-const xOperationButtons = document.querySelectorAll('[data-xoperation]')
+let expr = ''
 
-//need to work on xoperation buttons
+function solve(e){
+    let bot = document.getElementById("bottombar")
+    let top = document.getElementById("expr")
 
-class Calculator {
-    constructor(previousOperandTextElement, currentOperandTextElement) {
-        this.previousOperandTextElement = previousOperandTextElement
-        this.currentOperandTextElement = currentOperandTextElement
-        this.clear()
-    }
-    clear() {
-        this.currentOperand = ''
-        this.previousOperand = ''
-        this.operation = undefined
-        this.xOperation = undefined
-    }
-    delete() {
-        this.currentOperand = this.currentOperand.toString().slice(0, -1)
-    }
-    appendNumber(number) {
-        if (number === '.' && this.currentOperand.includes('.')) return
-        this.currentOperand = this.currentOperand.toString() + number.toString()
-    }
-    chooseOperation(operation) {
-        if (this.currentOperand === '') {
-            this.currentOperand = 0
+    expr = bot.innerText
+
+    top.innerText = expr + "="
+    top.scrollLeft = top.scrollWidth
+
+    function filter(e){
+        e = e.replace("x", '*')
+        e = e.replace("sin(", "sin(deg ")
+        e = e.replace("cos(", "cos(deg ")
+        e = e.replace("tan(", "tan(deg ")
+        e = e.replace("E", "*10^")
+        console.log(e)
+        let new_e = ""
+        let stack = []
+        let l, r = 0
+        for(let i=0;i<e.length;i++){
+            if(e[i] == "n" && i>0 && e[i-1] == "l"){
+                new_e += "og"
+                stack.push((l, r))
+                l = 1
+                r = 0
+                continue
+            }else if(e[i]==")"){
+                r++
+                if(r==l){
+                    l,r = stack.pop()
+                    new_e += ", e)"
+                    continue
+                }
+            }else if(e[i]=="("){
+                l++
+            }
+            new_e += e[i]
         }
-        if (this.previousOperand !== '') {
-            this.compute()
-        }
-        this.operation = operation
-        this.previousOperand = this.currentOperand
-        this.currentOperand = ''
+
+        return new_e
     }
-    chooseXOperation(xOperation) {
-        if (this.currentOperand === '') {
-            this.currentOperand = 0
-        }
-        if (this.previousOperand !== '') {
-            this.xcompute()
-        }
-        this.xOperation = xOperation
-        this.previousOperand = this.currentOperand
-        this.currentOperand =''
-    }
-    xcompute() {
-        let computation
-        const prev = parseFloat(this.previousOperand)
-        const current = parseFloat(this.currentOperand)
-        if (isNaN(prev) || isNaN(current)) return
-        switch(this.xOperation) {
-            case 'X!':
-                computation = factorial(prev)
-                break
-            default:
-                return
-        }
-        this.currentOperand = computation
-        this.xOperation = undefined
-        this.previousOperand = ''
-    }
-    compute() {
-        let computation
-        const prev = parseFloat(this.previousOperand)
-        const current = parseFloat(this.currentOperand)
-        if (isNaN(prev) || isNaN(current)) return
-        switch(this.operation) {
-            case '+':
-                computation = prev + current
-                break
-            case '-':
-                computation = prev - current
-                break
-            case '*':
-                computation = prev * current
-                break
-            case '÷':
-                computation = prev / current
-                break
-            case '%':
-                computation = prev % current
-                break
-            default:
-                return
-        }
-        this.currentOperand = computation
-        this.operation = undefined
-        this.previousOperand = ''
-    }
-    getDisplayNumber(number) {
-        const stringNumber = number.toString()
-        const integerDigits = parseFloat(stringNumber.split('.')[0])
-        const decimalDigits = stringNumber.split('.')[1]
-        let integerDisplay
-        if (isNaN(integerDigits)) {
-            integerDisplay = ''
-        } else {
-            integerDisplay = integerDigits.toLocaleString('en', {maximumFractionDigits: 0})
-        }
-        if (decimalDigits != null) {
-            return `${integerDisplay}.${decimalDigits}`
-        } else {
-            return integerDisplay
-        }
-    }
-    updateDisplay () {
-        this.currentOperandTextElement.innerText = 
-            this.getDisplayNumber(this.currentOperand)
-        if (this.operation != null) {
-            this.previousOperandTextElement.innerText = 
-                `${this.getDisplayNumber(this.previousOperand)} ${this.operation}`
-        } else if (this.xOperation === 'X!') {
-            this.previousOperandTextElement.innerText = 
-                `${this.getDisplayNumber(this.previousOperand)}!`
-        } else {
-            this.previousOperandTextElement.innerText = ''
-        }
-    }
+
+    try {
+        let ans = math.eval(filter(expr))
+        bot.innerText = ans
+        expr = ans
+    } catch (error) {
+        bot.innerText = "ERROR"
+        expr = ""
+    }   
 }
 
-const calculator = new Calculator(previousOperandTextElement, currentOperandTextElement)
-
-numberButtons.forEach(button => {
-    button.addEventListener('click', () => {
-        calculator.appendNumber(button.innerText)
-        calculator.updateDisplay()
-    })
-})
-operationButtons.forEach(button => {
-    button.addEventListener('click', () => {
-        calculator.chooseOperation(button.innerText)
-        calculator.updateDisplay()
-    })
-})
-xOperationButtons.forEach(button => {
-    button.addEventListener('click', () => {
-        calculator.chooseXOperation(button.innerText)
-        calculator.updateDisplay()
-    })
-})
-equalsButton.addEventListener('click', button => {
-    calculator.compute()
-    calculator.updateDisplay()
-})
-allClearButton.addEventListener('click', button => {
-    calculator.clear()
-    calculator.updateDisplay()
-})
-deleteButton.addEventListener('click', button => {
-    calculator.delete()
-    calculator.updateDisplay()
-})
-
-function factorial(num) {
-    if (num < 0) {
-        return undefined
-    } else if (num == 0) {
-        return 1
-    } else {
-        return (num * factorial(num - 1))
+function onClick(input){
+    let top = document.getElementById("expr")
+    let bot = document.getElementById("bottombar")
+    if(input=="AC" && bot.innerText=="") {
+        top.innerText = expr
+    }else if(input=="AC"){
+        expr = ""
+        bot.innerText = expr
+    }else{
+        expr+=input
+        bot.innerText = expr
     }
+    bot.scrollLeft = bot.scrollWidth
 }
