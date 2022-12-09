@@ -57,7 +57,10 @@ button:hover {
    background-color:white;
 }
 .off{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border-radius: 10px;
     cursor: pointer;
-    background-color: black;
+    background-color: rgb(39, 39, 39);
 }

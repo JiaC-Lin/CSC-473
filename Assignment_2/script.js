@@ -7,7 +7,6 @@ function solve(e){
     expr = bot.innerText
 
     top.innerText = expr + "="
-    top.scrollLeft = top.scrollWidth
 
     function filter(e){
         e = e.replace("x", '*')
@@ -64,5 +63,4 @@ function onClick(input){
         expr+=input
         bot.innerText = expr
     }
-    bot.scrollLeft = bot.scrollWidth
 }
