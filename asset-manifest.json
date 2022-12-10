@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Web-Design/Assignment_3/calculator/static/css/main.1a2511a1.css",
+    "main.js": "/Web-Design/Assignment_3/calculator/static/js/main.d7705d48.js",
+    "index.html": "/Web-Design/Assignment_3/calculator/index.html",
+    "main.1a2511a1.css.map": "/Web-Design/Assignment_3/calculator/static/css/main.1a2511a1.css.map",
+    "main.d7705d48.js.map": "/Web-Design/Assignment_3/calculator/static/js/main.d7705d48.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1a2511a1.css",
+    "static/js/main.d7705d48.js"
+  ]
+}
