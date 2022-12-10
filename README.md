@@ -15,5 +15,3 @@ Link to Second Assignment: <a href="https://jiac-lin.github.io/Web-Design/Assign
 <h4>Assignment 3: Using the same image for the calculator from Assignment 2, build a functional calculator using HTML, CSS, and React</h4>
 <a href="https://github.com/gitname/react-gh-pages"> React to GH-Pages </a>
 <br>
-Link to Third Assignment: <a href="https://jiac-lin.github.io/Web-Design/Assignment_3/calculator"> Assignment 3 </a>
-<hr>
