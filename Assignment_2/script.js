@@ -1,7 +1,7 @@
 let expr = ''
 
 function solve(e){
-    let bot = document.getElementById("bottombar")
+    let bot = document.getElementById("result")
     let top = document.getElementById("expr")
 
     expr = bot.innerText
@@ -53,7 +53,7 @@ function solve(e){
 
 function onClick(input){
     let top = document.getElementById("expr")
-    let bot = document.getElementById("bottombar")
+    let bot = document.getElementById("result")
     if(input=="AC" && bot.innerText=="") {
         top.innerText = expr
     }else if(input=="AC"){

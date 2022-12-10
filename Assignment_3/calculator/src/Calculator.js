@@ -5,7 +5,7 @@ import React, { Component } from 'react';
 class Calculator extends Component {
     constructor(props) {
         super(props);
-        this.state = {expr: '', result: 0};
+        this.state = {expr: '', result: ''};
         this.handleClick = this.handleClick.bind(this);
         this.solve = this.solve.bind(this);
         this.filter = this.filter.bind(this);
@@ -32,7 +32,7 @@ class Calculator extends Component {
         let l = 0
         let r = 0
         for(let i = 0; i < expr.length; i++){
-            if(expr[i] === "n" && i>0 && expr[i-1] === "l"){
+            if(expr[i] === "n" && i > 0 && expr[i-1] === "l"){
                 new_e += "og"
                 stack.push((l, r))
                 l = 1
