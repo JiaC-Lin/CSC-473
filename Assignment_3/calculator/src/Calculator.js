@@ -1,5 +1,5 @@
 import './style.css';
-import {evaluate} from 'mathjs';
+import { evaluate } from 'mathjs';
 import React, { Component } from 'react';
 
 class Calculator extends Component {
@@ -28,28 +28,10 @@ class Calculator extends Component {
         expr = expr.replace("tan(", "tan(deg ")
         expr = expr.replace("E", "*10^")
         let new_e = ""
-        let stack = []
-        let l = 0
-        let r = 0
         for(let i = 0; i < expr.length; i++){
             if(expr[i] === "n" && i > 0 && expr[i-1] === "l"){
                 new_e += "og"
-                stack.push((l, r))
-                l = 1
-                r = 0
                 continue
-            }else if(expr[i] === ")"){
-                r++
-                if(r===l){
-                    let end = stack.pop()
-                    l = end[0]
-                    r = end[1]
-                    // l,r = stack.pop();
-                    new_e += ", e)"
-                    continue
-                }
-            }else if(expr[i]==="("){
-                l++
             }
             new_e += expr[i]
         }
@@ -60,6 +42,7 @@ class Calculator extends Component {
     solve = (e) => {
         try {
             let ans = evaluate(this.filter(this.state.result))
+            //console.log(evaluate(sin(6)))
             this.setState((prevState) => ({...prevState, expr: prevState.result + "=", result: ans}))
         } catch (error) {
             this.setState((prevState) => ({...prevState, expr: "", result: "ERROR"}))

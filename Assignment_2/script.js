@@ -16,24 +16,10 @@ function solve(e){
         e = e.replace("E", "*10^")
         console.log(e)
         let new_e = ""
-        let stack = []
-        let l, r = 0
         for(let i=0;i<e.length;i++){
             if(e[i] == "n" && i>0 && e[i-1] == "l"){
                 new_e += "og"
-                stack.push((l, r))
-                l = 1
-                r = 0
                 continue
-            }else if(e[i]==")"){
-                r++
-                if(r==l){
-                    l,r = stack.pop()
-                    new_e += ", e)"
-                    continue
-                }
-            }else if(e[i]=="("){
-                l++
             }
             new_e += e[i]
         }
